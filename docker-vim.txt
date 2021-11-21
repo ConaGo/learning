@@ -1,0 +1,112 @@
+docker run
+docker container run	#specify type
+-p	--publish <host port>:<container port>
+-d	--detach	
+	--rm		#remove as soon as c stops
+	-it		#open shell after running
++ everything after the container name will be executed inside the container
++ f.E. docker run ubuntu uname -a
+
+-v	--volume	#create bind-mount
++ f.E. -v $(pwd):/folder
+
+
+container ls		#list all containers
+-a			#with non running
+container stop <id>	#stops
+	  kill		#sends SIGKILL
+	  restart	#stops and starts running c
+	  create	
+	  start		
+	  remove	#erase container from disk
+	
+container prune		#remove all
+	--force		#no confirm
+
+vim
+o newline after insert
+O newline before insert
+a insert after cursor
+A insert after line
+
+G move to end of file
+0 move to start of line
+shift $ move to end of line
+
+dw delete word
+2w move 2 words forward
+
+
+docker run
+docker container run	#specify type
+-p	--publish <host port>:<container port>
+-d	--detach	
+	--rm		#remove as soon as c stops
+	-it		#open shell after running
++ everything after the container name will be executed inside the container
++ f.E. docker run ubuntu uname -a
+
+-v	--volume	#create bind-mount
++ f.E. -v $(pwd):/folder
+
+
+container ls		#list all containers
+-a			#with non running
+container stop <id>	#stops
+	  kill		#sends SIGKILL
+	  restart	#stops and starts running c
+	  create	
+	  start		
+	  remove	#erase container from disk
+	
+container prune		#remove all
+	--force		#no confirm
+
+
+custom images
+EXPOSE                                  #only for documentaion
+docker image build .                    # . is the context
+docker image build --tag <repo>:<tag>   #to tag image
+image   ls
+        rm <id>
+        prune --force
+        history                         #display layers of the image
+COPY <source local> <dest image>        # . dest means / if not set otherwise
+RUN
+packages neccessary for the build step should be removed to keep image size low
+installation and removal needs to happen in one run command or else these would
+live in seperate layers and no space would be saved
+
+ubuntu                  alpine
+apt-get install         apk add --no-cache .build-deps  #collect files to  be deleted in one folder
+                        apk del .build-deps
+                        apk add --no-cache              #for dependencies
+apt-get remove          apk del
+
+ARG <NAME>="some_var"           #env variables
+${NAME}
+
+ADD https://nginx.org/download/${NAME}          #downloads file
+
+ENTRYPOINT <file>       #makes an image executable and sets file as entrypoint
+
+
+vim
+o newline after insert
+O newline before insert
+a insert after cursor
+A insert after line
+
+G move to end of file
+0 move to start of line
+shift $ move to end of line
+
+dw delete word
+2w move 2 words forward
+
+
+gg move to start of file
+20G move to line 20
+
+v enter visual mode
+
