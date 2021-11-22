@@ -23,11 +23,26 @@ container stop <id>	#stops
 container prune		#remove all
 	--force		#no confirm
 
+const newname(hello)
+
 vim
 o newline after insert
 O newline before insert
 a insert after cursor
 A insert after line
+
+capitalize to include .([{}]) etc.
+w move begiining next words
+b move beginning of last word
+e move to end of word
+ge move to end of last word
+
+capitalize to go backwards
+, or ; to go to last or next occurrence
+f{character} searches after cursor
+t ^             sets cursor before occurrence
+
+
 
 G move to end of file
 0 move to start of line
